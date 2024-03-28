@@ -460,6 +460,20 @@ def merge(left_arr, right_arr):
 li = [35, 43, 12, 27, 5, 90, 17, 8]
 print(mergeSort(li))
 
+"""
+O(2^n) - Fibnoacci Series
+"""
+def fib_series(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fib_series(n-1)+fib_series(n-2)
+
+n = 10
+for i in range(n):
+    print(fib_series(i), end=" ")
+
 
 
 
