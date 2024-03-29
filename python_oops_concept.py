@@ -17,6 +17,38 @@ print(obj.full_name)
 
 #so the objects are mutable because it can change dynamically
 
+#### Dunder method __str__ representation ###
+class Person:
+    species = "Homosapiens"
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    #instance method
+    def details(self):
+        return f"Name : {self.name} | Age:{self.age}"
+
+    #Another instance method
+    def name_change(self, name):
+        self.name = name
+
+    #this will represent the object
+    def __str__(self):
+        return f"Name: {self.name}"
+
+per1 = Person("Arun", 25)
+print(per1.details())
+per1.name_change("Arun Arunisto")
+print(per1.details())
+print(per1) #it will return a crytic type output shows where object saves in memory
+#but you can set the print option of an object by creating a __str__() method
+print(per1) #printing after the __str__() method
+
+#these type of methods (__init__, __str__) are called dunder methods
+#there are lots of dunder methods -> understanding the dunder methods is one of the key for mastering in oops
+
+
+
 """
 class : class is a blueprint for creating objects.
         it defines the attributes (data) and methods
