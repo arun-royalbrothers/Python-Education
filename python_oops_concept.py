@@ -47,6 +47,31 @@ print(per1) #printing after the __str__() method
 #these type of methods (__init__, __str__) are called dunder methods
 #there are lots of dunder methods -> understanding the dunder methods is one of the key for mastering in oops
 
+### Name Mangling ###
+class Sample:
+    #name mangling is the process declaring methods/attributes public, non-public, or private
+    def __init__(self, name):
+        self.__name = name #private instance attributes
+
+    def __details(self): #private instance method
+        return self.__name
+
+    def __str__(self):
+        return self.__name
+
+    def __doc__(self):
+        return "Class to demonstrate Name Mangling"
+
+
+obj = Sample("Aruunisto")
+print(obj)
+print(vars(obj))
+print(vars(Sample))
+
+#you can't access private/non-public attributes/methods
+#but they're not strictly private you can access them by their mangled names
+print(obj._Sample__name)
+print(obj._Sample__details())
 
 
 """
