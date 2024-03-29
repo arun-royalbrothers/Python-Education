@@ -1,3 +1,22 @@
+class Sample:
+    full_name = "Arun Arunisto" #This is class attribute
+    def __init__(self, name): #Initializing/creating instance attribute
+        self.name = name #instance attribute
+
+obj = Sample("Arun") #Instantiate means creating an object using class
+
+#object can access class attribute and instance attribute like below
+print(obj.name) #instance attribute
+print(obj.full_name) #class attribute
+
+#you can change attributes value dynamically
+obj.name = "Arun Arunisto"
+obj.full_name = "Arun"
+print(obj.name)
+print(obj.full_name)
+
+#so the objects are mutable because it can change dynamically
+
 """
 class : class is a blueprint for creating objects.
         it defines the attributes (data) and methods
