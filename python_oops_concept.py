@@ -74,6 +74,39 @@ print(obj._Sample__name)
 print(obj._Sample__details())
 
 
+### Adding instance attributes methods dynamically ###
+>>> class User:
+        pass
+... 
+>>> arun = User()
+>>> arun.name = "Arun Arunisto"
+>>> arun.age = 25
+>>> arun.__dict__
+{'name': 'Arun Arunisto', 'age': 25}
+
+>>> #adding instance attributes dynamically
+>>> arun = User()
+>>> arun.full_name = "arun arunisto"
+>>> arun.age = 25
+>>> arun.__dict__
+{'full_name': 'arun arunisto', 'age': 25}
+>>> #and adding methods dynamically
+>>> def __init__(self, name, age):
+...     self.name = name
+...     self.age = age
+... 
+...     
+>>> User.__init__ = __init__
+
+>>> def method(self):
+...     return self.name
+... 
+>>> User.method = method
+>>> arun = User("Arun", 25)
+>>> arun.method()
+'Arun'
+
+
 """
 class : class is a blueprint for creating objects.
         it defines the attributes (data) and methods
