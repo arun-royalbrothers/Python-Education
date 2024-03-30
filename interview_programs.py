@@ -474,6 +474,20 @@ n = 10
 for i in range(n):
     print(fib_series(i), end=" ")
 
+"""
+O(n!) - factorial
+"""
+def fac(n):
+    li = []
+    if n == 0:
+        
+        return
+    for i in range(n):
+        fac(n-1)
+
+fac(3)
+
+
 
 
 
