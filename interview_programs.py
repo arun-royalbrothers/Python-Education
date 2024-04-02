@@ -496,7 +496,20 @@ def fac(n):
       temp = fac(n-1)
       temp*=n
       return temp
-
+      
+"""
+O(n) - Permutattion
+"""
+def permutattion(str, packet=""):
+   if len(str) == 0:
+      print(packet)
+   else:
+      for i in range(len(str)):
+         letter = str[i]
+         front = str[0:i]
+         back = str[i+1:]
+         together = front+back
+         permutation(together, letter+packet)
 
 
 
