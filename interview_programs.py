@@ -486,6 +486,16 @@ def fac(n):
         fac(n-1)
 
 fac(3)
+"""
+O(n) - Factorial
+"""
+def fac(n):
+   if n==1:
+      return 1
+   else:
+      temp = fac(n-1)
+      temp*=n
+      return temp
 
 
 
