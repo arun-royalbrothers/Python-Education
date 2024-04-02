@@ -106,6 +106,39 @@ print(obj._Sample__details())
 >>> arun.method()
 'Arun'
 
+#### Property & Descriptor based attribute ####
+from datetime import datetime
+
+class AgeCalculator:
+    def __init__(self, year):
+        self.year = year
+
+    @property
+    def year(self):
+        return self._year
+
+    @year.setter
+    def year(self, value):
+        if len(str(value)) != 4 or not isinstance(value, int) or value <= 0:
+            raise ValueError("Not a valid year")
+        self._year = value
+
+    def age_calc(self):
+        cur_year = datetime.now().year
+        return int(cur_year) - self._year
+
+obj = AgeCalculator(1996)
+print(obj.age_cal()) #28
+obj.year = 2006
+print(obj.age_calc()) #18
+
+##Error Cases
+obj.year = 19 #this will raise an error
+obj.year = 0000 #this will raise an error
+obj.year = 19.96 #this will raise an error
+obj.year = "1996" #this will also raise an error
+
+
 
 """
 class : class is a blueprint for creating objects.
