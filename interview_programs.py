@@ -510,6 +510,24 @@ def permutattion(str, packet=""):
          back = str[i+1:]
          together = front+back
          permutation(together, letter+packet)
+"""
+GFG - GreedyFox - Time Complexity (0(n))
+"""
+def greedyFox(arr):
+    max_s = arr[0]
+    cur_s = arr[0]
+    for i in range(1, len(arr)):
+        if arr[i] > arr[i-1]:
+            cur_s+=arr[i]
+            if cur_s > max_s:
+                max_s = cur_s
+        else:
+            cur_s = arr[i]
+    return max_s
+
+print(greedyFox([2, 1, 4, 7, 3, 6]))
+
+
 
 
 
