@@ -539,7 +539,17 @@ class Solution:
         for i in range(2, n+1):
             steps[i] = steps[i-1]+steps[i-2]
         return steps[n]
-
+"""
+LeetCode - Remove Duplicates from sorted linkedlist
+"""
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur = head
+        while cur:
+            while cur.next and cur.next.val == cur.val:
+                cur.next = cur.next.next
+            cur = cur.next
+        return head
 
 
 
