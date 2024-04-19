@@ -27,3 +27,5 @@
 ## sending_mails - sending mails using python
 
 ## timeComplexityProgramms - Sample Programms and their time complexity
+
+## CustomList_DynamicArray - Creating our own custom list (Dynamic Array) using ctypes module
