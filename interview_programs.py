@@ -526,8 +526,19 @@ def greedyFox(arr):
     return max_s
 
 print(greedyFox([2, 1, 4, 7, 3, 6]))
-
-
+"""
+LeetCode - Climbing Stairs
+"""
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+        steps = [1, 1]+[0]*(n-1)
+        for i in range(2, n+1):
+            steps[i] = steps[i-1]+steps[i-2]
+        return steps[n]
 
 
 
