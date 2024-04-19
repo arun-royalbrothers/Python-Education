@@ -550,6 +550,25 @@ class Solution:
                 cur.next = cur.next.next
             cur = cur.next
         return head
-
+"""
+Pascal's Triangle Leetcode
+"""
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        result = []
+        if numRows == 0:
+            return result
+        result.append([1])
+        if numRows == 1:
+            return result
+        for i in range(1, numRows):
+            prev_li = result[i-1]
+            in_li = []
+            in_li.append(1)
+            for j in range(i-1):
+                in_li.append(prev_li[j]+prev_li[j+1])
+            in_li.append(1)
+            result.append(in_li)
+        return result
 
 
