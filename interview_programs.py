@@ -570,5 +570,20 @@ class Solution:
             in_li.append(1)
             result.append(in_li)
         return result
+"""
+Longest Common Prefix
+"""
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        result = ""
+        strs.sort()
+        first_word = strs[0]
+        last_word = strs[-1]
+        for i in range(len(first_word)):
+            if first_word[i] == last_word[i]:
+                result+=first_word[i]
+            else:
+                break
+        return result
 
 
