@@ -69,8 +69,6 @@ class MyList:
 
     #delete an item
     def __delitem__(self, pos):
-        if pos >= self.n:
-            return "Index out of range"
         if pos < 0:
             try:
                 pos = self.n+pos
