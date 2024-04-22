@@ -67,6 +67,19 @@ class MyList:
         self.A[pos] = item
         self.n+=1
 
+    #delete an item
+    def __delitem__(self, pos):
+        if pos >= self.n:
+            return "Index out of range"
+        if pos < 0:
+            try:
+                pos = self.n+pos
+            except:
+                return "Index out of range"
+        for i in range(pos, self.n-1):
+            self.A[i] = self.A[i+1]
+        self.n-=1
+
     #pop element
     def pop(self):
         if self.n == 0:
