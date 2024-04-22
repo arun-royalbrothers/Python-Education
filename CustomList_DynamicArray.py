@@ -82,9 +82,7 @@ class MyList:
     def remove(self, value):
         pos = self.find(value)
         if type(pos) == int:
-            for i in range(pos, self.n-1):
-                self.A[i] = self.A[i+1]
-            self.n-=1
+            self.__delitem__(pos)
         else:
             return pos
     
