@@ -50,6 +50,23 @@ class MyList:
                 return []
         return self.A[index]
 
+    #finding element index
+    def find(self, item):
+        for i in range(self.n):
+            if self.A[i] == item:
+                return i
+        else:
+            return "Not in the List"
+
+    #inserting element using index
+    def insert(self, pos, item):
+        if self.n == self.size:
+            self.__resize(self.size*2)
+        for i in range(self.n, pos, -1):
+            self.A[i] = self.A[i-1]
+        self.A[pos] = item
+        self.n+=1
+
     #pop element
     def pop(self):
         if self.n == 0:
