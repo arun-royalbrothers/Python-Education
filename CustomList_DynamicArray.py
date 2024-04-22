@@ -78,6 +78,16 @@ class MyList:
             self.A[i] = self.A[i+1]
         self.n-=1
 
+    #remove an item by using value
+    def remove(self, value):
+        pos = self.find(value)
+        if type(pos) == int:
+            for i in range(pos, self.n-1):
+                self.A[i] = self.A[i+1]
+            self.n-=1
+        else:
+            return pos
+    
     #pop element
     def pop(self):
         if self.n == 0:
