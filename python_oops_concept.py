@@ -222,4 +222,43 @@ acc_1.deposit_amount(100)
 print(acc_1.get_balance())
 print(acc_1._BankAccount__balance) #accessing private variable
 
+"""
+Data Abstraction:
+It involves the process of hiding the implementation details of a system and only showing the essential features of the object.
+"""
+from math import pi
+
+class Shape:
+    def __init__(self, val):
+        self.val = val
+    def get_area(self):
+        raise NotImplementedError("Not Accessible!")
+    def get_perimeter(self):
+        raise NotImplementedError("Not Accessible!")
+
+class Circle(Shape):
+    #val represents radius here.
+    def __init__(self, val):
+        super().__init__(val)
+    def get_area(self):
+        return pi*self.val**2
+    def get_perimeter(self):
+        return 2*pi*self.val
+class Square(Shape):
+    #val represents side here
+    def __init__(self, val):
+        super().__init__(val)
+    def get_area(self):
+        return 2*self.val
+    def get_perimeter(self):
+        return 4*self.val
+
+
+circle = Circle(14)
+print(circle.get_area())
+square = Square(25)
+print(square.get_perimeter())
+shape = Shape(25)
+print(shape.get_area()) #it will raise an error
+
     
