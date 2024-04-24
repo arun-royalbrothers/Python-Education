@@ -98,5 +98,17 @@ class MyList:
     def clear(self):
         self.n = 0
         self.size = 1
+
+    #concatenate array using + operator
+    def __add__(self, other_li):
+        new_li = MyList()
+        #first appending the self.A element
+        for i in range(self.n):
+            new_li.append(self.A[i])
+        #then appending the other_list element
+        for i in range(len(other_li)):
+            new_li.append(other_li[i])
+        #then returning new_li
+        return new_li
         
     
