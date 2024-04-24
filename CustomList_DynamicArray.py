@@ -40,7 +40,7 @@ class MyList:
         self.A = B
 
     #getting elements using index
-    def __getitem__(self, index):
+    """def __getitem__(self, index):
         if index >= self.n:
             return "IndexError - Index Out Of Range"
         if index < 0:
@@ -48,7 +48,42 @@ class MyList:
                 return self.A[self.n+index]
             except:
                 return []
-        return self.A[index]
+        return self.A[index]"""
+
+    #adding slicing to the get_item   
+    def __getitem__(self, index):
+        if isinstance(index, int):
+            if index < 0:
+                try:
+                    return self.A[self.n+index]
+                except:
+                    return "Index out of range"
+            if index >= self.n:
+                return "Index out of range"
+            return self.A[index]
+        if isinstance(index, slice):
+            start, stop, step = index.start, index.stop, index.step
+            #checking that is it's none and assign a value
+            #for start check if it's none. if it's none assigning 0
+            start = start if start is not None else 0
+            #and also for stop, if it's none assigning self.n
+            stop = stop if stop is not None else self.n
+            #and for step assigning 1 as default
+            step = step if step is not None else 1
+
+            #creating a new array
+            new_li = MyList()
+            #checking that start and step is > self.n
+            if start >= self.n:
+                return new_li
+            if stop > self.n:
+                stop = self.n
+            #running an loop and adding element to new_li
+            for i in range(start, stop, step):
+                new_li.append(self.A[i])
+            return new_li
+        else:
+            return "Invalid Option"
 
     #finding element index
     def find(self, item):
