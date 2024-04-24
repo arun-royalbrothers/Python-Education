@@ -57,7 +57,7 @@ class MyList:
                 try:
                     return self.A[self.n+index]
                 except:
-                    return "Index out of range"
+                    return MyList()
             if index >= self.n:
                 return "Index out of range"
             return self.A[index]
