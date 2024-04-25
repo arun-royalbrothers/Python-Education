@@ -134,6 +134,16 @@ class MyList:
         self.n = 0
         self.size = 1
 
+    #adding sort - insertion sort algorithm going to use
+    def sort(self):
+        for i in range(1, self.n):
+            key = self.A[i]
+            j = i-1
+            while j>=0 and self.A[j] > key:
+                self.A[j+1] = self.A[j]
+                j-=1
+            self.A[j+1] = key
+
     #concatenate array using + operator
     def __add__(self, other_li):
         new_li = MyList()
