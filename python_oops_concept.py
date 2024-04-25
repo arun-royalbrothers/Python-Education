@@ -261,4 +261,32 @@ print(square.get_perimeter())
 shape = Shape(25)
 print(shape.get_area()) #it will raise an error
 
+"""
+Abstract Base Classes:
+Using `abc` module for abstract the python classes
+"""
+from math import pi
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    def __init__(self, value):
+        self.value = value
+
+    @abstractmethod
+    def get_area(self):
+        pass
+    @abstractmethod
+    def get_perimeter(self):
+        pass
+
+class Circle(Shape):
+    #here value referesd as radius
+    def __init__(self, value):
+        super().__init__(value)
+
+    def get_area(self):
+        return pi*self.value**2
+    def get_perimeter(self):
+        return 2*pi*self.value
+
     
