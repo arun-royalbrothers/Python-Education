@@ -5,6 +5,7 @@ LinkedList - [Done]
 Append - [Done]
 Length - [Done]
 Print - [Done]
+Insert in head - [Done]
 """
 #creating a Node
 class Node:
@@ -43,3 +44,10 @@ class LinkedList:
 
     def __repr__(self):
         return self.__str__()
+
+    #inserting from head
+    def insert_from_head(self, value):
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
+        self.n+=1
