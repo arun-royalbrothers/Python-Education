@@ -29,3 +29,6 @@
 ## timeComplexityProgramms - Sample Programms and their time complexity
 
 ## CustomList_DynamicArray - Creating our own custom list (Dynamic Array) using ctypes module
+
+## linked_list_dsa - Trying to create own singly linkedlist by using DS logic
+
