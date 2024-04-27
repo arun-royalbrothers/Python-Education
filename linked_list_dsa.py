@@ -6,6 +6,7 @@ Append - [Done]
 Length - [Done]
 Print - [Done]
 Insert in head - [Done]
+Insert using position - [Done]
 """
 #creating a Node
 class Node:
@@ -51,3 +52,25 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
         self.n+=1
+
+    #insert using position
+    def insert(self, pos, value):
+        if pos < 0:
+            raise Exception("Negative indexing on next version")
+        if pos >= self.n:
+            raise Exception("Index out of range")
+        if pos == 0:
+            self.insert_from_head(value)
+            self.n+=1
+        else:
+            new_node = Node(value)
+            curr = self.head
+            i = 1
+            while curr != None and i < self.n:
+                if i == pos:
+                    break
+                curr = curr.next
+                i+=1
+            new_node.next = curr.next
+            curr.next = new_node
+            self.n+=1
