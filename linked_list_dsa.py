@@ -8,6 +8,7 @@ Print - [Done]
 Insert in head - [Done]
 Insert using position - [Done]
 Indexing - [Done]
+Clear - [Done]
 """
 #creating a Node
 class Node:
@@ -92,3 +93,8 @@ class LinkedList:
                     return curr.data
                 curr = curr.next
                 i+=1
+
+    #clear
+    def clear(self):
+        self.head = None
+        self.n = 0
