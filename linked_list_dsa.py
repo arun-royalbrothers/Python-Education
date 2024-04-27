@@ -7,6 +7,7 @@ Length - [Done]
 Print - [Done]
 Insert in head - [Done]
 Insert using position - [Done]
+Indexing - [Done]
 """
 #creating a Node
 class Node:
@@ -74,3 +75,20 @@ class LinkedList:
             new_node.next = curr.next
             curr.next = new_node
             self.n+=1
+
+    #indexing 
+    def __getitem__(self, pos):
+        if pos < 0:
+            pos = self.n+pos
+            if pos < 0:
+                raise Exception("Index out of range")
+        if pos >= self.n:
+            raise Exception("Index out of range")
+        if 0 <= pos < self.n:
+            curr = self.head
+            i = 0
+            while curr != None and i < self.n:
+                if i == pos:
+                    return curr.data
+                curr = curr.next
+                i+=1
