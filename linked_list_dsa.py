@@ -104,5 +104,6 @@ class LinkedList:
     def remove_from_head(self):
         if self.head != None:
             self.head = self.head.next
+            self.n-=1
         else:
             return "Linked list is empty"
