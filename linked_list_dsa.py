@@ -9,6 +9,7 @@ Insert in head - [Done]
 Insert using position - [Done]
 Indexing - [Done]
 Clear - [Done]
+Remove from head - [Done]
 """
 #creating a Node
 class Node:
@@ -98,3 +99,10 @@ class LinkedList:
     def clear(self):
         self.head = None
         self.n = 0
+
+    #remove from head
+    def remove_from_head(self):
+        if self.head != None:
+            self.head = self.head.next
+        else:
+            return "Linked list is empty"
