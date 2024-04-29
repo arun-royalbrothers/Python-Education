@@ -289,4 +289,30 @@ class Circle(Shape):
     def get_perimeter(self):
         return 2*pi*self.value
 
-    
+"""
+MRO - Method Resolution Order
+It helps python to do the multiple inheritance
+"""
+#MRO - Test Case - 1
+class A:
+    def __init__(self):
+        print("Class A")
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("Class B")
+
+class C(A):
+    def __init__(self):
+        super().__init__()
+        print("Class C")
+
+class D(C, B):
+    def __init__(self):
+        super().__init__()
+        print("Class D")
+# The MRO will be for this code
+"""
+Class D --> Class C --> Class B --> Class A --> object
+"""
