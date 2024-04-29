@@ -313,6 +313,34 @@ class D(C, B):
         super().__init__()
         print("Class D")
 # The MRO will be for this code
+obj = D()
+obj.__mro__
 """
 Class D --> Class C --> Class B --> Class A --> object
+"""
+
+"""
+MRO - Next approach changeing parent swap
+"""
+class A:
+    def __init__(self):
+        print("Class A")
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("Class B")
+
+class C(A):
+    def __init__(self):
+        super().__init__()
+        print("Class C")
+
+class D(B, C):
+    def __init__(self):
+        super().__init__()
+        print("Class D")
+# The MRO will be for this code
+"""
+Class D --> Class B --> Class C --> Class A --> object
 """
