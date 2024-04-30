@@ -10,6 +10,7 @@ Insert using position - [Done]
 Indexing - [Done]
 Clear - [Done]
 Remove from head - [Done]
+pop [Remove from last] - [Done]
 """
 #creating a Node
 class Node:
@@ -107,3 +108,21 @@ class LinkedList:
             self.n-=1
         else:
             return "Linked list is empty"
+
+    #remove from last - pop
+    def pop(self):
+        if self.head == None:
+            return "Linked List is empty"
+        curr = self.head
+        if curr.next == None:
+            data = self.head.data
+            self.head = None
+            self.n = 0
+            return data
+        else:
+            while curr.next.next != None:
+                curr = curr.next
+            data = curr.next.data
+            curr.next = curr.next.next
+            self.n-=1
+            return data
