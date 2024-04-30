@@ -597,5 +597,30 @@ def insertionSort(li):
          j-=1
       li[j+1] = key
    return li
+"""
+LeetCode 20. Valid Parenthesis
+"""
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) < 2:
+            return False
+        li = []
+        for i in range(len(s)):
+            if len(li) == 0 and s[i] in (")", "]", "}"):
+                return False
+            if s[i] == "(":
+                li.append(")")
+            elif s[i] == "[":
+                li.append("]")
+            elif s[i] == "{":
+                li.append("}")
+            elif s[i] == li[-1]:
+                li.pop()
+            else:
+                return False
+        if len(li) == 0:
+            return True
+        else:
+            return False
 
 
