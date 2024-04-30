@@ -13,6 +13,7 @@ Remove from head - [Done]
 pop [Remove from last] - [Done]
 remove by value - [Done]
 delete using index 'del' - [Done]
+count - [Done]
 """
 #creating a Node
 class Node:
@@ -159,3 +160,16 @@ class LinkedList:
     def __delitem__(self, pos):
         item = self.__getitem__(pos)
         self.remove(item)
+
+    #count
+    def count(self, value):
+        if self.head == None:
+            return "Linked list is empty"
+        else:
+            i = 0
+            curr = self.head
+            while curr != None:
+                if curr.data == value:
+                    i+=1
+                curr = curr.next
+            return i
