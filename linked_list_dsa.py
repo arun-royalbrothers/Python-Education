@@ -11,6 +11,7 @@ Indexing - [Done]
 Clear - [Done]
 Remove from head - [Done]
 pop [Remove from last] - [Done]
+remove by value - [Done]
 """
 #creating a Node
 class Node:
@@ -126,3 +127,29 @@ class LinkedList:
             curr.next = curr.next.next
             self.n-=1
             return data
+
+    #remove using value
+    def remove(self, value):
+        if self.head == None:
+            return "Linked List is Empty"
+        if self.head.next == None:
+            if self.head.data == value:
+                self.head = None
+                self.n = 0
+            else:
+                return f"{value} not in the Linked List"
+        else:
+            curr = self.head
+            if curr.data == value:
+                self.head = curr.next
+                self.n-=1
+            else:
+                while curr.next != None:
+                    if curr.next.data == value:
+                        break
+                    curr = curr.next
+                if curr.next != None:
+                    curr.next = curr.next.next
+                    self.n-=1
+                else:
+                    return f"{value} not in the linked list"
