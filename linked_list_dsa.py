@@ -12,6 +12,7 @@ Clear - [Done]
 Remove from head - [Done]
 pop [Remove from last] - [Done]
 remove by value - [Done]
+delete using index 'del' - [Done]
 """
 #creating a Node
 class Node:
@@ -153,3 +154,8 @@ class LinkedList:
                     self.n-=1
                 else:
                     return f"{value} not in the linked list"
+
+    #delete using index and __delitem__
+    def __delitem__(self, pos):
+        item = self.__getitem__(pos)
+        self.remove(item)
