@@ -620,6 +620,22 @@ class Solution:
                 return False
         if len(li) == 0:
             return True
+"""
+121. Best time to buy and sell stock
+"""
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        curr_pri = prices[0]
+        max_pro = 0
+        curr_pro = 0
+        for i in range(1, len(prices)):
+            if curr_pri < prices[i]:
+                curr_pro = prices[i] - curr_pri
+                if curr_pro > max_pro:
+                    max_pro = curr_pro
+            else:
+                curr_pri = prices[i]
+        return max_pro
         else:
             return False
 
