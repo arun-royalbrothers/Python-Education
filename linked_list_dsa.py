@@ -14,6 +14,7 @@ pop [Remove from last] - [Done]
 remove by value - [Done]
 delete using index 'del' - [Done]
 count - [Done]
+reverse - [Done]
 """
 #creating a Node
 class Node:
@@ -173,3 +174,14 @@ class LinkedList:
                     i+=1
                 curr = curr.next
             return i
+
+    #reversing a linked_list
+    def reverse(self):
+        if self.head == None:
+            return "Linked List is empty"
+        new_ = LinkedList()
+        curr = self.head
+        while curr != None:
+            new_.insert_from_head(curr.data)
+            curr = curr.next
+        return new_
