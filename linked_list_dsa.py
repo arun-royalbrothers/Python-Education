@@ -15,6 +15,7 @@ remove by value - [Done]
 delete using index 'del' - [Done]
 count - [Done]
 reverse - [Done]
+maximum - [Done]
 """
 #creating a Node
 class Node:
@@ -185,3 +186,15 @@ class LinkedList:
             new_.insert_from_head(curr.data)
             curr = curr.next
         return new_
+
+    #maximum value of an linked list
+    def maximum(self):
+        if self.head == None:
+            return "Linked List is empty"
+        curr = self.head
+        max_ = curr.data
+        while curr != None:
+            if max_ < curr.data:
+                max_ = curr.data
+            curr = curr.next
+        return max_
