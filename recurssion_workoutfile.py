@@ -8,3 +8,13 @@ def reverse_str(str, n, result=""):
 
 a = "Arun Arunisto"
 print(reverse_str(a, len(a)-1))
+
+#reverse an integer using recurrsion
+def reverse_int(num, result=0):
+    if num == 0:
+        return result
+    digit = num%10
+    result = result*10+digit
+    num//=10
+    return reverse_int(num, result)
+print(reverse_int(123))
