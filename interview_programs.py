@@ -620,6 +620,8 @@ class Solution:
                 return False
         if len(li) == 0:
             return True
+        else:
+           return False
 """
 121. Best time to buy and sell stock
 """
@@ -653,7 +655,6 @@ class Solution:
                 else:
                     votes-=1
         return majority
-        else:
-            return False
+       
 
 
