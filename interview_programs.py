@@ -655,6 +655,17 @@ class Solution:
                 else:
                     votes-=1
         return majority
-       
+"""
+Reverse an Integer
+"""
+#Reversing an intger
+def reverse_int(num):
+    result = 0
+    while num > 0:
+        digit = num%10
+        result = result*10+digit
+        num//=10
+    return result
+
 
 
