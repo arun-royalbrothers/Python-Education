@@ -50,3 +50,9 @@ def sum_numbers(num, result=0):
         return result
     result+=num
     return sum_numbers(num-1, result)
+
+#sum of natural numbers - FCC 
+def sum_of_num(num):
+    if num <= 1:
+        return num
+    return num+sum_of_num(num-1)
