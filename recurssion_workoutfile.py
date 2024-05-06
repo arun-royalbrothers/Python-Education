@@ -35,4 +35,12 @@ def palindrome_str(str):
         return palindrome_str(str[1:-1])
     return False
 
+#recursion with int
+#palindrome
+def palindrome_str(str):
+    if str == "":
+        return True
+    if str[0] == str[-1]:
+        return palindrome_str(str[1:-1])
+    return False
 
