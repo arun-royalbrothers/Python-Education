@@ -27,3 +27,12 @@ def reverse_str(str, result=""):
     result += str[-1]
     return reverse_str(str[:-1], result)
 
+#palindrome
+def palindrome_str(str):
+    if str == "":
+        return True
+    if str[0] == str[-1]:
+        return palindrome_str(str[1:-1])
+    return False
+
+
