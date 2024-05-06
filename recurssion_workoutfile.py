@@ -44,3 +44,9 @@ def palindrome_str(str):
         return palindrome_str(str[1:-1])
     return False
 
+#sum of natural numbers
+def sum_numbers(num, result=0):
+    if num == 0:
+        return result
+    result+=num
+    return sum_numbers(num-1, result)
