@@ -18,3 +18,12 @@ def reverse_int(num, result=0):
     num//=10
     return reverse_int(num, result)
 print(reverse_int(123))
+
+# 06.05.2024
+#reverse string 
+def reverse_str(str, result=""):
+    if str == "":
+        return result
+    result += str[-1]
+    return reverse_str(str[:-1], result)
+
