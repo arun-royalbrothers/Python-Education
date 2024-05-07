@@ -57,6 +57,7 @@ def sum_of_num(num):
         return num
     return num+sum_of_num(num-1)
 
+## 07.05.2024
 #binary search
 def binary_search(li, start, end, target):
     if start > end:
@@ -68,3 +69,9 @@ def binary_search(li, start, end, target):
         return binary_search(li, start, mid-1, target)
     else:
         return binary_search(li, mid+1, end, target)
+
+#fibonacci series
+def fib_series(n):
+    if n <= 1:
+        return n
+    return fib_series(n-1) + fib_series(n-2)
