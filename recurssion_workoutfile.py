@@ -56,3 +56,15 @@ def sum_of_num(num):
     if num <= 1:
         return num
     return num+sum_of_num(num-1)
+
+#binary search
+def binary_search(li, start, end, target):
+    if start > end:
+        return False
+    mid = (start+end)//2
+    if li[mid] == target:
+        return True
+    if target < li[mid]:
+        return binary_search(li, start, mid-1, target)
+    else:
+        return binary_search(li, mid+1, end, target)
