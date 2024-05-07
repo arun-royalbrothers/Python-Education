@@ -75,3 +75,26 @@ def fib_series(n):
     if n <= 1:
         return n
     return fib_series(n-1) + fib_series(n-2)
+
+#merge sort
+def merge_sort(li):
+    if len(li) < 2:
+        return li
+    mid = len(li)//2
+    left_arr = li[0:mid]
+    right_arr = li[mid:len(li)]
+    return merge(merge_sort(left_arr), merge_sort(right_arr))
+
+def merge(left_arr, right_arr):
+    result = []
+    left_idx = 0
+    right_idx = 0
+    while left_idx < len(left_arr) and right_idx < len(right_arr):
+        if left_arr[left_idx] < right_arr[right_idx]:
+            result.append(left_arr[left_idx])
+            left_idx+=1
+        else:
+            result.append(right_arr[right_idx])
+            right_idx+=1
+    return result+left_arr[left_idx:]+right_arr[right_idx:]
+    
