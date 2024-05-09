@@ -5,7 +5,7 @@ Stack operations:
 creating node - [Done]
 creating stack - [Done]
 push - To insert an element to last - [Done]
-pop - To remove/out from the last (LIFO) concept
+pop - To remove/out from the last (LIFO) concept - [Done]
 peak - To retreive data of the top
 is_empty - to check the stack is empty - [Done]
 length - to get the size of the stack
@@ -28,3 +28,10 @@ class Stack:
         new_node = Node(value)
         new_node.next = self.top
         self.top = new_node
+
+    def pop(self):
+        if self.is_empty():
+            return "Stack is empty!!"
+        data = self.top.data
+        self.top = self.top.next
+        return data
