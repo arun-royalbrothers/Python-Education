@@ -6,7 +6,7 @@ creating node - [Done]
 creating stack - [Done]
 push - To insert an element to last - [Done]
 pop - To remove/out from the last (LIFO) concept - [Done]
-peak - To retreive data of the top
+peak - To retreive data of the top - [Done]
 is_empty - to check the stack is empty - [Done]
 length - to get the size of the stack
 traverse - to print the elements in the stack
@@ -35,3 +35,8 @@ class Stack:
         data = self.top.data
         self.top = self.top.next
         return data
+
+    def peak(self):
+        if self.is_empty():
+            return "Stack is empty!!"
+        return self.top.data
