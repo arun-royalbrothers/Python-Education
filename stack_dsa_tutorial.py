@@ -9,7 +9,7 @@ pop - To remove/out from the last (LIFO) concept - [Done]
 peak - To retreive data of the top - [Done]
 is_empty - to check the stack is empty - [Done]
 length - to get the size of the stack - [Done]
-traverse - to print the elements in the stack
+traverse - to print the elements in the stack - [Done]
 """
 
 class Node:
@@ -50,3 +50,11 @@ class Stack:
             size+=1
             curr = curr.next
         return size
+
+    def __str__(self):
+        result = ""
+        curr = self.top
+        while curr != None:
+            result = result+str(curr.data)+", "
+            curr = curr.next
+        return "[ "+result[:-2]+" ]"
