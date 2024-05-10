@@ -686,5 +686,23 @@ class Solution:
             if same_row:
                 result.append(words[i])
         return result
-
+"""
+Leet Code 599: Minimum Index Sum of Two Lists
+"""
+class Solution:
+    def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+        result = []
+        sum_index = 0
+        for i in range(len(list1)):
+            if list1[i] in list2:
+                total_index = list1.index(list1[i])+list2.index(list1[i])
+                if sum_index == 0 and len(result) == 0:
+                    result.append(list1[i])
+                    sum_index = total_index
+                elif total_index == sum_index:
+                    result.append(list1[i])
+                elif total_index < sum_index:
+                    result = [list1[i]]
+                    sum_index = total_index
+        return result
 
