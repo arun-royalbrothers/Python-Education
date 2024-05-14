@@ -705,4 +705,27 @@ class Solution:
                     result = [list1[i]]
                     sum_index = total_index
         return result
+"""
+Leet Code 3042: Count suffix and prefix pairs 1
+"""
+class Solution:
+    def countPrefixSuffixPairs(self, words: List[str]) -> int:
+        count = 0
+        for i in range(len(words)):
+            for j in range(i+1, len(words)):
+                if self.is_valid(words[i], words[j]):
+                    count+=1
+        return count
+    
+    def is_valid(self, w1, w2):
+        result = False
+        if len(w1) > len(w2):
+            return result
+        for i in range(len(w1)):
+            if w1[i] == w2[i] and w1[(len(w1)-1)-i] == w2[(len(w2)-1)-i]:
+                result = True
+            else:
+                result = False
+                break
+        return result
 
