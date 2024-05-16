@@ -728,4 +728,27 @@ class Solution:
                 result = False
                 break
         return result
+"""
+748: Shortest Completing Word
+"""
+class Solution:
+    def shortestCompletingWord(self, licensePlate: str, words: List[str]) -> str:
+        lp = "".join([i for i in licensePlate.lower() if i.isalpha()])
+        min_len = len(sorted(words, key=len)[-1])+1
+        res = ""
+        for i in range(len(words)):
+            if self.isMatch(words[i], lp) and len(words[i]) < min_len:
+                min_len = len(words[i])
+                res = words[i]
+        return res
+
+    def isMatch(self, word, lp):
+        res = False
+        for i in lp:
+            if i in word and word.count(i) >= lp.count(i):
+                res = True
+            else:
+                res = False
+                return res
+        return res
 
