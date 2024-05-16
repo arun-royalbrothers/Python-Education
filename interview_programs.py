@@ -751,4 +751,24 @@ class Solution:
                 res = False
                 return res
         return res
+"""
+806: Number of Lines to write string
+"""
+class Solution:
+    def numberOfLines(self, widths: List[int], s: str) -> List[int]:
+        alp = ["a", "b", "c", "d", "e",
+           "f", "g", "h", "i", "j",
+            "k", "l", "m", "n", "o",
+            "p", "q", "r", "s", "t",
+            "u", "v", "w", "x", "y", "z"]
+        alp_wid = {alp[i]:widths[i] for i in range(len(alp))}
+        lines, total = 0, 0
+        for i in s:
+            total+=alp_wid[i]
+            if total > 100:
+                lines+=1
+                total = alp_wid[i]
+        if total > 0:
+            lines+=1
+        return [lines, total]
 
